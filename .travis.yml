@@ -1,5 +1,12 @@
 language: node_js
 node_js:
-  - 5
-  - 4
-  - 0.12
+  - 14
+  - lts/*
+
+script:
+  - yarn test
+
+cache:
+  yarn: true
+  directories:
+    - node_modules

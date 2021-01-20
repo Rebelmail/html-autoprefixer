@@ -1,17 +1,22 @@
 {
-  "name": "html-autoprefixer",
-  "version": "0.3.8",
+  "name": "html-css-autoprefixer",
+  "version": "2.0.0",
   "description": "Autoprefix all CSS inside an html page - CSS inside style tags and inside style attributes",
   "main": "lib/main.js",
+  "bin": "lib/cli.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "istanbul test _mocha -- --recursive"
+    "test": "istanbul test _mocha -- --recursive",
+    "publish-git": "npm publish && git push && git push --tags",
+    "publish-patch": "npm version patch && npm run publish-git",
+    "publish-minor": "npm version minor && npm run publish-git",
+    "publish-major": "npm version major && npm run publish-git"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rebelmail/html-autoprefixer.git"
+    "url": "https://github.com/tonix-tuft/tonix-html-autoprefixer.git"
   },
   "keywords": [
     "autoprefixer",
@@ -25,12 +30,13 @@
   "author": "motdotla",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^4.2.0",
     "istanbul": "^0.4.1",
-    "mocha": "^2.3.4"
+    "mocha": "^8.2.1"
   },
   "dependencies": {
-    "autoprefixer": "^6.1.1",
-    "html-postcss": "^0.1.2"
+    "autoprefixer": "^10.1.0",
+    "tonix-html-postcss": "^1.0.0",
+    "postcss": "^8.2.1"
   }
 }

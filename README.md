@@ -1,3 +1,11 @@
+# tonix-html-autoprefixer
+
+This package is a fork of the original [html-autoprefixer](https://github.com/devinus/html-autoprefixer) repo.
+
+This fork comes with updated NPM packages.
+
+The original README.md follows below this paragraph.
+
 # html-autoprefixer
 
 ![html-autoprefixer](../master/html-autoprefixer.png?raw=true)
@@ -23,7 +31,8 @@ You pass an html string to `.process` and it returns the processed html.
 
 ```javascript
 var htmlAutoprefixer = require("html-autoprefixer");
-var htmlString = "<html><head><style>:fullscreen a { transition: transform 1s; }</style></head><body><h1 style='font-feature-settings: \"liga\", \"dlig\";'>Hello</h1></body></html>";
+var htmlString =
+  '<html><head><style>:fullscreen a { transition: transform 1s; }</style></head><body><h1 style=\'font-feature-settings: "liga", "dlig";\'>Hello</h1></body></html>';
 
 var prefixed = htmlAutoprefixer.process(htmlString);
 ```
@@ -33,7 +42,7 @@ You can optionally pass [cheerio options](https://github.com/cheeriojs/cheerio#l
 ```javascript
 var htmlString = "<HTML></HTML>";
 
-var prefixed = htmlAutoprefixer.process(htmlString, { lowerCaseTags: true } );
+var prefixed = htmlAutoprefixer.process(htmlString, { lowerCaseTags: true });
 // <html></html>
 ```
 
@@ -44,14 +53,15 @@ var prefixed = htmlAutoprefixer.process(htmlString, { lowerCaseTags: true } );
 Using [Gulp](http://gulpjs.com)? Use [gulp-html-autoprefixer](https://github.com/RebelMail/gulp-html-autoprefixer).
 
 ```javascript
-var gulp = require( "gulp" );
-var htmlAutoprefixer = require( "gulp-html-autoprefixer" );
+var gulp = require("gulp");
+var htmlAutoprefixer = require("gulp-html-autoprefixer");
 
-gulp.task( "html-autoprefix", function( ) {
-  return gulp.src( "./path/to/index-or-other.html" )
-    .pipe( htmlAutoprefixer( ) )
-    .pipe( gulp.dest( "dist" ) );
-} );
+gulp.task("html-autoprefix", function () {
+  return gulp
+    .src("./path/to/index-or-other.html")
+    .pipe(htmlAutoprefixer())
+    .pipe(gulp.dest("dist"));
+});
 ```
 
 ## Contributing
